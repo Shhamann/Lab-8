@@ -2,18 +2,18 @@ import cv2
 import numpy as np 
 from matplotlib import pyplot as plt
 
-input_image = cv2.imread('variant-4.jpeg')
-b, g, r = cv2.split(input_image)
+def task1():
+    input_image = cv2.imread('variant-4.jpeg')
+    blue_channel = np.array(input_image)
+    blue_channel[:, :, 0] = 0 
+    blue_channel[:, :, 1] = 0 
+    plt.title('Первое задание')
+    plt.axis('off')
+    plt.imshow(blue_channel)
+    plt.show()
 
-length, width = input_image.shape[0:2]
-for x in range(length):
-    for y in range(width):
-        g[x, y] = 0
-        r[x, y] = 0
+def task2():
+    
 
-merged = cv2.merge([r, g, b])
-plt.title('Первое задание')
-
-plt.axis('off')
-plt.imshow(merged)
-plt.show()
+# task1()
+task2()
